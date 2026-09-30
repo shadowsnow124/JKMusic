@@ -132,130 +132,340 @@ const PACKAGES = [
 ------------------------------------------------------------------ */
 const INVENTORY = [
   {
-    name: "JBL PRX715", category: "Speakers",
+    name: "JBL PRX715",
+    category: "Speakers",
     image: "images/gear/jbl-prx715.jpg",
-    specs: [{ en: "15\" woofer 2000W Peak", th: "ดอก 15 นิ้ว 2000 วัตต์พีค" }, { en: "136 dB SPL", th: "136 เดซิเบล" }, { en: "Freq Response (±3 dB) 58.1 Hz - 17.2 kHz", th: "การตอบสนองความถื่ (±3 dB) 58.1 Hz - 17.2 kHz" }, ], 
-    desc: { en: "15-inch Two-Way Full-Range Main System/Floor Monitor ", th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว" }
+    specs: [
+      { en: "15\" woofer 2000W Peak", th: "ดอกวูฟเฟอร์ 15 นิ้ว 2000 วัตต์พีค" },
+      { en: "136 dB SPL", th: "136 เดซิเบล" },
+      { en: "Freq Response (±3 dB): 58.1 Hz - 17.2 kHz", th: "การตอบสนองความถื่ (±3 dB): 58.1 Hz - 17.2 kHz" }
+    ],
+    desc: {
+      en: "15-inch Two-Way Full-Range Main System/Floor Monitor",
+      th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว"
+    }
   },
   {
-    name: "VL Audio VIVA715D", category: "Speakers",
+    name: "VL Audio VIVA715D",
+    category: "Speakers",
     image: "images/gear/vl-audio-viva715d.png",
-    specs: [{ en: "15\" woofer 1600W Peak", th: "ดอก 12 นิ้ว 1600 วัตต์พีค" }, { en: "134 dB SPL", th: "134 เดซิเบล" }, { en: "Freq Response 45 Hz – 20 kHz", th: "การตอบสนองความถื่ 45 Hz – 20 kHz" }],
-    desc: { en: "15-inch 2-way powered loudspeaker with Class-D amplifier.", th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว" }
+    specs: [
+      { en: "15\" woofer 1600W Peak", th: "ดอกวูฟเฟอร์ 15 นิ้ว 1600 วัตต์พีค" },
+      { en: "134 dB SPL", th: "134 เดซิเบล" },
+      { en: "Freq Response: 45 Hz – 20 kHz", th: "การตอบสนองความถื่: 45 Hz – 20 kHz" }
+    ],
+    desc: {
+      en: "15-inch 2-way powered loudspeaker with Class-D amplifier.",
+      th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว"
+    }
   },
   {
-    name: "Wharfedale Pro SH1564", category: "Speakers",
+    name: "Wharfedale Pro SH1564",
+    category: "Speakers",
     image: "images/gear/wharfedale-sh1564.jpg",
-    specs: [{ en: "15\" woofer", th: "ดอก 15 นิ้ว" }, { en: "134 dB SPL", th: "134 เดซิเบล" }, { en: "Passive 2-way", th: "พาสซีฟ 2 ทาง" }],
-    desc: { en: "Passive 15-inch 2-way speaker cabinet for use with an external amp.", th: "ตู้ลำโพงพาสซีฟ 2 ทาง 15 นิ้ว ใช้งานคู่กับแอมป์ภายนอก" }
+    specs: [
+      { en: "15\" woofer 4000W Peak", th: "ดอกวูฟเฟอร์ 15 นิ้ว 4000 วัตต์พีค" },
+      { en: "132 dB SPL (1w @ 1m): 99 dB SPL", th: "132 เดซิเบล (1w @ 1m): 99 เดซิเบล SPL" },
+      { en: "Freq Response: 50Hz - 20kHz", th: "การตอบสนองความถื่: 50Hz - 20kHz" }
+    ],
+    desc: {
+      en: "Passive 15-inch 2-way speaker cabinet for use with an external amp.",
+      th: "ตู้ลำโพงพาสซีฟ 2 ทาง 15 นิ้ว ใช้งานคู่กับแอมป์ภายนอก"
+    }
   },
   {
-    name: "JBL SRX715", category: "Speakers",
+    name: "JBL SRX715",
+    category: "Speakers",
     image: "images/gear/jbl-srx715.jpg",
-    specs: [{ en: "15\" woofer", th: "ดอก 15 นิ้ว" }, { en: "134 dB SPL", th: "134 เดซิเบล" }, { en: "Passive 2-way", th: "พาสซีฟ 2 ทาง" }],
-    desc: { en: "Passive 15-inch 2-way top for touring-grade sound reinforcement.", th: "ตู้ลำโพงพาสซีฟ 2 ทาง 15 นิ้ว สำหรับงานระดับทัวร์ริ่ง" }
+    specs: [
+      { en: "15\" woofer 3200W Peak", th: "ดอกวูฟเฟอร์ 15 นิ้ว 3200 วัตต์พีค" },
+      { en: "131 dB SPL (1w @ 1m): 96 dB SPL", th: "131 เดซิเบล (1w @ 1m): 96 เดซิเบล SPL" },
+      { en: "Freq Response (±3 dB): 53 Hz – 20 kHz", th: "การตอบสนองความถื่ (±3 dB): 53 Hz – 20 kHz" }
+    ],
+    desc: {
+      en: "Passive 15-inch 2-way top for touring-grade sound reinforcement.",
+      th: "ตู้ลำโพงพาสซีฟ 2 ทาง 15 นิ้ว สำหรับงานระดับทัวร์ริ่ง"
+    }
   },
   {
-    name: "Audiocenter MA12", category: "Speakers",
+    name: "Audiocenter MA12",
+    category: "Speakers",
     image: "images/gear/audiocenter-ma12.jpg",
-    specs: [{ en: "12\" woofer", th: "ดอก 12 นิ้ว" }, { en: "134 dB SPL", th: "134 เดซิเบล" }, { en: "Bi-amp Class-D", th: "ไบแอมป์ Class-D" }],
-    desc: { en: "Compact 12-inch 2-way powered loudspeaker for mid-size stages.", th: "ลำโพงแอคทีฟ 2 ทาง 12 นิ้ว ขนาดกะทัดรัด เหมาะกับเวทีขนาดกลาง" }
+    specs: [
+      { en: "12\" woofer 1600W Peak", th: "ดอกวูฟเฟอร์ 12 นิ้ว 1600 วัตต์พีค" },
+      { en: "131 dB SPL", th: "131 เดซิเบล" },
+      { en: "Freq Response (-6 dB): 50Hz - 20kHz", th: "การตอบสนองความถื่ (-6 dB): 50Hz - 20kHz" }
+    ],
+    desc: {
+      en: "Compact 12-inch 2-way powered loudspeaker for mid-size stages.",
+      th: "ลำโพงแอคทีฟ 2 ทาง 12 นิ้ว ขนาดกะทัดรัด เหมาะกับเวทีขนาดกลาง"
+    }
   },
   {
-    name: "De acoustic H212", category: "Speakers",
+    name: "De acoustic H212",
+    category: "Speakers",
     image: "images/gear/de-acoustic-h212.jpg",
-    specs: [{ en: "Dual 12\" woofers", th: "ดอก 12 นิ้ว คู่" }, { en: "134 dB SPL", th: "134 เดซิเบล" }, { en: "High SPL output", th: "SPL สูง" }],
-    desc: { en: "Horn-loaded dual-12 speaker built for high output at long throw.", th: "ลำโพงฮอร์นคู่ 12 นิ้ว ให้เสียงดังและไปได้ไกล" }
+    specs: [
+      { en: "12\" woofer 2000W Peak", th: "ดอกวูฟเฟอร์ 12 นิ้ว 2000 วัตต์พีค" },
+      { en: "117 dB SPL (1w @ 1m): 99 dB SPL", th: "117 เดซิเบล (1w @ 1m): 99 เดซิเบล SPL" },
+      { en: "Freq Response (±3 dB): 53 Hz – 19 kHz", th: "การตอบสนองความถื่ (±3 dB): 53 Hz – 19 kHz" }
+    ],
+    desc: {
+      en: "Horn-loaded dual-12 speaker built for high output at long throw.",
+      th: "ลำโพงฮอร์นคู่ 12 นิ้ว ให้เสียงดังและไปได้ไกล"
+    }
   },
   {
-    name: "VL AUDIO Veda II VD-12L", category: "Speakers",
+    name: "VL AUDIO Veda II VD-12L",
+    category: "Speakers",
     image: "images/gear/vl-audio-veda-12.png",
-    specs: [{ en: "12\" woofer 1400W Peak", th: "ดอก 15 นิ้ว 1400 วัตต์พีค" }, { en: "136 dB SPL", th: "136 เดซิเบล" }, { en: "Freq Response (-3 dB) 57Hz-16 kHz", th: "การตอบสนองความถื่ (-3 dB) 57Hz-16 kHz" }],
-    desc: { en: "15-inch 2-way powered loudspeaker with Class-D amplifier.", th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว" }
+    specs: [
+      { en: "12\" woofer 1600W Peak", th: "ดอกวูฟเฟอร์ 12 นิ้ว 1600 วัตต์พีค" },
+      { en: "134 dB SPL", th: "134  เดซิเบล" },
+      { en: "Freq Response (-3 dB): 58Hz – 16kHz", th: "การตอบสนองความถื่ (-3 dB): 58Hz – 16kHz" }
+    ],
+    desc: {
+      en: "12-inch 2-way powered loudspeaker with Class-D amplifier.",
+      th: "ลำโพงแอคทีฟ 2 ทาง 12 นิ้ว พร้อมแอมป์ Class-D ในตัว"
+    }
   },
   {
-    name: "KANE TW10", category: "Speakers",
+    name: "KANE TW10",
+    category: "Speakers",
     image: "images/gear/kane-tw10.jpg",
-    specs: [{ en: "12\" woofer 1400W Peak", th: "ดอก 15 นิ้ว 1400 วัตต์พีค" }, { en: "136 dB SPL", th: "136 เดซิเบล" }, { en: "Freq Response (-3 dB) 57Hz-16 kHz", th: "การตอบสนองความถื่ (-3 dB) 57Hz-16 kHz" }],
-    desc: { en: "15-inch 2-way powered loudspeaker with Class-D amplifier.", th: "ลำโพงแอคทีฟ 2 ทาง 15 นิ้ว พร้อมแอมป์ Class-D ในตัว" }
+    specs: [
+      { en: "10\" woofer 700W Prog", th: "ดอกวูฟเฟอร์ 10 นิ้ว 700 วัตต์โปรแกรม" },
+      { en: "129 dB SPL (1w @ 1m): 112 dB SPL", th: "129 เดซิเบล (1w @ 1m): 112 เดซิเบล SPL" },
+      { en: "Freq Response: 60Hz - 18kHz", th: "การตอบสนองความถื่: 60Hz - 18kHz" }
+    ],
+    desc: {
+      en: "10-inch 2-way loudspeaker.",
+      th: "ลำโพง 2 ทาง 10 นิ้ว"
+    }
   },
   {
-    name: "Audiocenter MA118", category: "Speakers",
+    name: "Audiocenter MA118",
+    category: "Speakers",
     image: "images/gear/audiocenter-ma118.jpg",
-    specs: [{ en: "18\" powered sub", th: "ซับแอคทีฟ 18 นิ้ว" }, { en: "High output DSP", th: "DSP กำลังขับสูง" }, { en: "Deep low end", th: "เสียงเบสลึก" }],
-    desc: { en: "18-inch powered subwoofer with onboard DSP for deep, controlled bass.", th: "ซับวูฟเฟอร์แอคทีฟ 18 นิ้ว มี DSP ในตัว ให้เสียงเบสลึกและควบคุมได้ดี" }
+    specs: [
+      { en: "18\" subwoofer 2000W Peak", th: "ซับวูฟเฟอร์แอคทีฟ 18 นิ้ว 2000 วัตต์พีค" },
+      { en: "134 dB SPL", th: " 134 เดซิเบล" },
+      { en: "Freq Response: 32 Hz – 150 Hz", th: "การตอบสนองความถื่: 32 Hz – 150 Hz" }
+    ],
+    desc: {
+      en: "18-inch powered subwoofer with onboard DSP for deep, controlled bass.",
+      th: "ซับวูฟเฟอร์แอคทีฟ 18 นิ้ว มี DSP ในตัว ให้เสียงเบสลึกและควบคุมได้ดี"
+    }
   },
   {
-    name: "Yamaha DXS12Mkii", category: "Speakers",
+    name: "Yamaha DXS12Mkii",
+    category: "Speakers",
     image: "images/gear/yamaha-dxs12mkii.jpg",
-    specs: [{ en: "12\" powered sub", th: "ซับแอคทีฟ 12 นิ้ว" }, { en: "1000W Class-D", th: "1000 วัตต์ Class-D" }, { en: "Compact footprint", th: "ขนาดกะทัดรัด" }],
-    desc: { en: "Compact 12-inch powered subwoofer, easy to transport and stack.", th: "ซับวูฟเฟอร์แอคทีฟ 12 นิ้ว ขนาดกะทัดรัด ขนย้ายและวางซ้อนง่าย" }
+    specs: [
+      { en: "12\" subwoofer 1020W Peak", th: "ซับวูฟเฟอร์แอคทีฟ 12 นิ้ว 1020 วัตต์พีค" },
+      { en: "134 dB SPL", th: "134 เดซิเบล" },
+      { en: "Freq Response: 42 Hz – 150 Hz", th: "การตอบสนองความถื่: 42 Hz – 150 Hz" }
+    ],
+    desc: {
+      en: "Compact 12-inch powered subwoofer, easy to transport and stack.",
+      th: "ซับวูฟเฟอร์แอคทีฟ 12 นิ้ว ขนาดกะทัดรัด ขนย้ายและวางซ้อนง่าย"
+    }
   },
   {
-    name: "Wharfedale Pro Delta-X18B", category: "Speakers",
+    name: "Wharfedale Pro Delta-X18B",
+    category: "Speakers",
     image: "images/gear/wharfedale-deltax18b.jpg",
-    specs: [{ en: "18\" passive sub", th: "ซับพาสซีฟ 18 นิ้ว" }, { en: "High power handling", th: "รับกำลังวัตต์สูง" }, { en: "Bass reflex", th: "ระบบเบสรีเฟล็กซ์" }],
-    desc: { en: "Passive 18-inch subwoofer for heavy low-end reinforcement.", th: "ซับวูฟเฟอร์พาสซีฟ 18 นิ้ว เสริมเสียงเบสหนักแน่น" }
+    specs: [
+      { en: "18\" subwoofer 3200W Peak", th: "ซับวูฟเฟอร์พาสซีฟ 18 นิ้ว 3200 วัตต์พีค" },
+      { en: "134 dB SPL", th: "134 เดซิเบล" },
+      { en: "Freq Response (±3 dB): 38 Hz – 1.5 kHz", th: "การตอบสนองความถื่ (±3 dB): 38 Hz – 1.5 kHz" }
+    ],
+    desc: {
+      en: "Passive 18-inch subwoofer for heavy low-end reinforcement.",
+      th: "ซับวูฟเฟอร์พาสซีฟ 18 นิ้ว เสริมเสียงเบสหนักแน่น"
+    }
   },
   {
-    name: "Yamaha T5n", category: "Amplifiers",
+    name: "Yamaha T5n",
+    category: "Amplifiers",
     image: "images/gear/yamaha-t5n.jpg",
-    specs: [{ en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" }, { en: "Class-D", th: "Class-D" }, { en: "Rack mount", th: "ติดตั้งแบบแร็ค" }],
-    desc: { en: "2-channel power amplifier for driving passive tops or subs.", th: "แอมป์ขยายเสียง 2 ชาแนล สำหรับขับลำโพงพาสซีฟหรือซับ" }
+    specs: [
+      { en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" },
+      { en: "1400W @ 8Ω / ch", th: "1400 วัตต์ @ 8Ω / ชาแนล" },
+      { en: "2500W @ 4Ω / ch", th: "2500 วัตต์ @ 4Ω / ชาแนล" },
+    ],
+    desc: {
+      en: "2-channel power amplifier for driving passive tops or subs.",
+      th: "แอมป์ขยายเสียง 2 ชาแนล สำหรับขับลำโพงพาสซีฟหรือซับ"
+    }
   },
   {
-    name: "TDK TD26", category: "Amplifiers",
+    name: "TDK TD26",
+    category: "Amplifiers",
     image: "images/gear/tdk-td26.jpg",
-    specs: [{ en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" }, { en: "DSP built-in", th: "มี DSP ในตัว" }, { en: "Rack mount", th: "ติดตั้งแบบแร็ค" }],
-    desc: { en: "Reliable rack-mount power amp with onboard DSP.", th: "แอมป์ขยายเสียงแบบติดแร็ค มี DSP ในตัว เสถียรใช้งานง่าย" }
+    specs: [
+      { en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" },
+      { en: "2700W @ 8Ω / ch", th: "2700 วัตต์ @ 8Ω / ชาแนล" },
+      { en: "5000W @ 4Ω / ch", th: "5000 วัตต์ @ 4Ω / ชาแนล" },
+    ],
+    desc: {
+      en: "2-channel power amplifier for driving passive tops or subs.",
+      th: "แอมป์ขยายเสียง 2 ชาแนล สำหรับขับลำโพงพาสซีฟหรือซับ"
+    }
   },
   {
-    name: "QSC GX5", category: "Amplifiers",
+    name: "QSC GX5",
+    category: "Amplifiers",
     image: "images/gear/qsc-gx5.jpg",
-    specs: [{ en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" }, { en: "500W @ 4Ω / ch", th: "500 วัตต์ @ 4Ω / ชาแนล" }, { en: "Class-H", th: "Class-H" }],
-    desc: { en: "Compact 2-channel power amplifier, great for smaller rigs.", th: "แอมป์ขยายเสียง 2 ชาแนล ขนาดกะทัดรัด เหมาะกับชุดเครื่องเสียงขนาดเล็ก" }
+    specs: [
+      { en: "2-channel power amp", th: "แอมป์ 2 ชาแนล" },
+      { en: "500W @ 8Ω / ch", th: "500 วัตต์ @ 8Ω / ชาแนล" },
+      { en: "700W @ 4Ω / ch", th: "700 วัตต์ @ 4Ω / ชาแนล" },
+    ],
+    desc: {
+      en: "Compact 2-channel power amplifier, great for smaller rigs.",
+      th: "แอมป์ขยายเสียง 2 ชาแนล ขนาดกะทัดรัด เหมาะกับชุดเครื่องเสียงขนาดเล็ก"
+    }
   },
   {
-    name: "Dynacord CMS1600-2", category: "Mixers",
+    name: "Dynacord CMS1600-2",
+    category: "Mixers",
     image: "images/gear/dynacord-cms1600-2.jpg",
-    specs: [{ en: "16 channels", th: "16 ช่อง" }, { en: "Built-in effects", th: "เอฟเฟกต์ในตัว" }, { en: "Mono/stereo out", th: "เอาต์พุตโมโน/สเตอริโอ" }],
-    desc: { en: "16-channel analogue mixer with built-in effects for live sound.", th: "มิกเซอร์อนาล็อก 16 ช่อง มีเอฟเฟกต์ในตัว เหมาะกับงานเสียงสด" }
+    specs: [
+      { en: "12 Mono / 4 Stereo Channels", th: "" },
+      { en: "3-band EQ", th: "" },
+      { en: "Dual independent 24-bit stereo digital effect processors", th: "-" }
+    ],
+    desc: {
+      en: "16-channel analogue mixer with built-in effects for live sound.",
+      th: "มิกเซอร์อนาล็อก 16 ช่อง มีเอฟเฟกต์ในตัว เหมาะกับงานเสียงสด"
+    }
   },
   {
-    name: "Mackie ProFX16v2", category: "Mixers",
+    name: "Mackie ProFX16v2",
+    category: "Mixers",
     image: "images/gear/mackie-profx16v2.jpg",
-    specs: [{ en: "16 channels", th: "16 ช่อง" }, { en: "Built-in FX", th: "เอฟเฟกต์ในตัว" }, { en: "USB audio interface", th: "อินเทอร์เฟซ USB" }],
-    desc: { en: "16-channel mixer with onboard effects and a USB audio interface.", th: "มิกเซอร์ 16 ช่อง มีเอฟเฟกต์และอินเทอร์เฟซ USB ในตัว" }
+    specs: [
+      { en: "8 Mono / 4 Stereo Channels", th: "" },
+      { en: "3-band (High: 12 kHz, Low: 80 Hz)", th: "" },
+      { en: "Built-in USB 1.1 interface (Type B)", th: "-" }
+    ],
+    desc: {
+      en: "16-channel mixer with onboard effects and a USB audio interface.",
+      th: "มิกเซอร์ 16 ช่อง มีเอฟเฟกต์และอินเทอร์เฟซ USB ในตัว"
+    }
   },
   {
-    name: "Shure SLX4", category: "Microphones",
+    name: "Shure SLX4",
+    category: "Microphones",
     image: "images/gear/shure-slx4.jpg",
-    specs: [{ en: "UHF wireless receiver", th: "ตัวรับสัญญาณไร้สาย UHF" }, { en: "Pairs with handheld/lapel", th: "ใช้คู่กับไมค์ถือ/หนีบปก" }, { en: "Rack mountable", th: "ติดตั้งแบบแร็คได้" }],
-    desc: { en: "Reliable UHF wireless receiver for handheld or lapel mic systems.", th: "ตัวรับสัญญาณไร้สายระบบ UHF ที่เชื่อถือได้ ใช้กับชุดไมค์ถือหรือหนีบปก" }
+    specs: [
+      { en: "Up to 24 MHz bandwidth", th: "" },
+      { en: "960 selectable frequencies", th: "-" },
+      { en: "Operating Range: 100m (300ft) under typical conditions ", th: "-" }
+    ],
+    desc: {
+      en: "Reliable UHF wireless receiver for handheld or lapel mic systems.",
+      th: "ตัวรับสัญญาณไร้สายระบบ UHF ที่เชื่อถือได้ ใช้กับชุดไมค์ถือหรือหนีบปก"
+    }
   },
   {
-    name: "Shure SLX24/BETA58", category: "Microphones",
+    name: "Shure SLX24/BETA58",
+    category: "Microphones",
     image: "images/gear/shure-slx24.jpg",
-    specs: [{ en: "Dynamic cardioid", th: "ไดนามิก คาร์ดิออยด์" }, { en: "Vocal-tuned", th: "จูนมาเพื่อเสียงร้อง" }, { en: "Rugged build", th: "โครงสร้างทนทาน" }],
-    desc: { en: "The world's most popular vocal microphone — durable and reliable.", th: "ไมค์เสียงร้องที่นิยมที่สุดในโลก ทนทานและเชื่อถือได้" }
+    specs: [
+      { en: "Frequency Response: 50Hz - 15kHz ", th: "" },
+      { en: "THD: 0.5%", th: "-" },
+      { en: "Operating Range: 100m (300ft) under typical conditions ", th: "-" }
+    ],
+    desc: {
+      en: "The world's most popular vocal microphone — durable and reliable.",
+      th: "ไมค์เสียงร้องที่นิยมที่สุดในโลก ทนทานและเชื่อถือได้"
+    }
   },
   {
-    name: "Behringer BC1200", category: "Microphones",
-    image: "images/gear/behringer-bc1200.jpg",
-    specs: [{ en: "Boundary/condenser mic", th: "ไมค์คอนเดนเซอร์แบบวางพื้นผิว" }, { en: "Wide pickup pattern", th: "รับเสียงมุมกว้าง" }, { en: "Low profile", th: "ทรงเตี้ยไม่เกะกะ" }],
-    desc: { en: "Low-profile boundary mic for panel discussions and conferences.", th: "ไมค์ทรงเตี้ยสำหรับงานสัมมนาและงานเสวนา" }
+    name: "Behringer SL 75C",
+    category: "Microphones",
+    image: "images/gear/behringer-sl75c.jpg",
+    specs: [
+      { en: "Frequency Response: 40Hz - 15kHz ", th: "" },
+      { en: "Sens: -54 ± 2dBV/Pa", th: "-" },
+      { en: "Maximum SPL: 150 dB", th: "-" }
+    ],
+    desc: {
+      en: "Dynamic instrument and vocal microphone.",
+      th: "ไมโครโฟนไดนามิกสำหรับเครื่องดนตรีและเสียงร้อง"
+    }
   },
   {
-    name: "Dbx 166a", category: "Accessories",
+    name: "Behringer C-2",
+    category: "Microphones",
+    image: "images/gear/behringer-c2.jpg",
+    specs: [
+      { en: "Frequency Response: 20Hz - 20kHz ", th: "" },
+      { en: "Sens: -41 ± 2dBV/Pa (8.9mV/Pa)", th: "-" },
+      { en: "Maximum SPL: 136 dB", th: "-" }
+    ],
+    desc: {
+      en: "Studio condenser microphones for instruments and live sound.",
+      th: "ไมโครโฟนคอนเดนเซอร์สตูดิโอสำหรับเครื่องดนตรีและงานเสียงสด"
+    }
+  },
+  {
+    name: "Dbx 166a",
+    category: "Accessories",
     image: "images/gear/dbx-166a.jpg",
-    specs: [{ en: "2-channel compressor/gate", th: "คอมเพรสเซอร์/เกต 2 ชาแนล" }, { en: "OverEasy compression", th: "ระบบ OverEasy" }, { en: "Analogue rack unit", th: "อุปกรณ์แร็คอนาล็อก" }],
-    desc: { en: "2-channel compressor/limiter/gate for cleaning up live mixes.", th: "คอมเพรสเซอร์/ลิมิตเตอร์/เกต 2 ชาแนล ช่วยจัดการเสียงมิกซ์สดให้เนียนขึ้น" }
+    specs: [
+      { en: "Frequency Response: 20Hz - 20kHz(±0.5dB) ", th: "" },
+      { en: "Dynamic Range: >113 dB", th: "-" },
+      { en: "THD + Noise: <0.2%", th: "-" }
+    ],
+    desc: {
+      en: "2-channel compressor/limiter/gate for cleaning up live mixes.",
+      th: "คอมเพรสเซอร์/ลิมิตเตอร์/เกต 2 ชาแนล ช่วยจัดการเสียงมิกซ์สดให้เนียนขึ้น"
+    }
   },
   {
-    name: "Behringer VX2000", category: "Accessories",
+    name: "Lexicon MPX-1",
+    category: "Accessories",
+    image: "images/gear/lexicon-mpx1.jpg",
+    specs: [
+      { en: "200 factory presets / 50 user program locations", th: "-" },
+      { en: "Frequency Response: 20Hz - 20kHz(±1dB) ", th: "" },
+      { en: "THD + Noise: <0.01%", th: "-" }
+    ],
+    desc: {
+      en: "multi-effects processor and hardware reverb unit",
+      th: "-"
+    }
+  },
+  {
+    name: "Behringer VX2000",
+    category: "Accessories",
     image: "images/gear/behringer-vx2000.jpg",
-    specs: [{ en: "Vocal channel processor", th: "โปรเซสเซอร์ช่องเสียงร้อง" }, { en: "Compression + EQ", th: "คอมเพรสชัน + EQ" }, { en: "Tube-style warmth", th: "ให้เสียงอุ่นแบบหลอด" }],
-    desc: { en: "All-in-one vocal channel processor for a polished live vocal sound.", th: "โปรเซสเซอร์ช่องเสียงร้องแบบครบวงจร ให้เสียงร้องสดที่คมชัดและเป็นมืออาชีพ" }
+    specs: [
+      { en: "Tube Emulation: Authentic solid-state tube/tape saturation simulation circuitry", th: "โปรเซสเซอร์ช่องเสียงร้อง" },
+      { en: "Built-in dynamic expander", th: "-" },
+      { en: "Optical compression circuit for transparent", th: "-" }
+    ],
+    desc: {
+      en: "All-in-one vocal channel processor for a polished live vocal sound.",
+      th: "โปรเซสเซอร์ช่องเสียงร้องแบบครบวงจร ให้เสียงร้องสดที่คมชัดและเป็นมืออาชีพ"
+    }
+  },
+  {
+    name: "Behringer MDX4600",
+    category: "Accessories",
+    image: "images/gear/behringer-mdx4600.jpg",
+    specs: [
+      { en: "Frequency Response: 10Hz - 80kHz(±0.5dB) ", th: "" },
+      { en: "Dynamic Range: >115 dB(20Hz - 20kHz)", th: "-" },
+      { en: "THD + Noise: <0.008% (1kHz at +10dBu)", th: "-" }
+    ],
+    desc: {
+      en: "4-channel expander/gate/compressor/peak limiter.",
+      th: "เอ็กซ์ปันเดอร์/เกต/คอมเพรสเซอร์/พีคลิมิตเตอร์ 4 ชาแนล"
+    }
   }
 ];
 
