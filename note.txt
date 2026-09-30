@@ -1,0 +1,113 @@
+const RENTAL = [
+  {
+    name: "JBL SRX835P", category: "Speakers", price: "฿1,500 / day",
+    image: "images/gear/srx835p.jpg",
+    specs: [{ en: "3-way powered", th: "แอคทีฟ 3 ทาง" }, { en: "2000W peak", th: "2000 วัตต์พีค" }, { en: "15\" woofer", th: "ดอก 15 นิ้ว" }],
+    desc: { en: "Main speaker for crowds up to 800.", th: "ลำโพงหลักรองรับผู้ชมได้ถึง 800 คน" }
+  },
+  {
+    name: "RCF SUB 8004-AS", category: "Speakers", price: "฿1,800 / day",
+    image: "images/gear/rcf-sub.jpg",
+    specs: [{ en: "18\" sub", th: "ซับ 18 นิ้ว" }, { en: "2500W RMS", th: "2500 วัตต์ RMS" }, { en: "30 Hz low end", th: "ลงลึกถึง 30 Hz" }],
+    desc: { en: "Deep low end for EDM, live bands and outdoor shows.", th: "เสียงเบสลึกสำหรับ EDM วงดนตรีสด และงานกลางแจ้ง" }
+  },
+  {
+    name: "Behringer X32 Compact", category: "Mixers", price: "฿1,600 / day",
+    image: "images/gear/x32.jpg",
+    specs: [{ en: "32 channels", th: "32 ช่อง" }, { en: "iPad control", th: "ควบคุมผ่าน iPad" }, { en: "USB recording", th: "บันทึกผ่าน USB" }],
+    desc: { en: "Reliable digital console, easy to operate.", th: "มิกเซอร์ดิจิทัลที่เสถียรและใช้งานง่าย" }
+  },
+  {
+    name: "Crown XTi 4002", category: "Amplifiers", price: "฿900 / day",
+    image: "images/gear/crown-xti4002.jpg",
+    specs: [{ en: "2× 1200W @ 4Ω", th: "2x 1200 วัตต์ @ 4Ω" }, { en: "DSP built-in", th: "มี DSP ในตัว" }, { en: "Rack mount", th: "ติดตั้งแบบแร็ค" }],
+    desc: { en: "Reliable power amp for driving passive tops and subs.", th: "แอมป์ขยายเสียงเสถียร ขับลำโพงพาสซีฟและซับได้ดี" }
+  },
+  {
+    name: "Lab Gruppen PLM 20000Q", category: "Amplifiers", price: "฿2,400 / day",
+    image: "images/gear/labgruppen-plm.jpg",
+    specs: [{ en: "4× 5000W", th: "4x 5000 วัตต์" }, { en: "Onboard processing", th: "มีระบบประมวลผลในตัว" }, { en: "Dante network audio", th: "รองรับ Dante" }],
+    desc: { en: "High-power amplification for line arrays and large subs.", th: "แอมป์กำลังสูงสำหรับไลน์อาเรย์และซับขนาดใหญ่" }
+  },
+  {
+    name: "Shure SM58 (Wired)", category: "Microphones", price: "฿150 / day",
+    image: "images/gear/sm58.jpg",
+    specs: [{ en: "Dynamic cardioid", th: "ไดนามิก คาร์ดิออยด์" }, { en: "Vocal-tuned", th: "จูนมาเพื่อเสียงร้อง" }, { en: "Stand included", th: "พร้อมขาตั้ง" }],
+    desc: { en: "Industry-standard vocal mic — 20 in stock.", th: "ไมค์ร้องมาตรฐานอุตสาหกรรม — มีในสต็อก 20 ตัว" }
+  },
+  {
+    name: "Shure BLX24 Wireless", category: "Microphones", price: "฿600 / day",
+    image: "images/gear/blx24.jpg",
+    specs: [{ en: "UHF wireless", th: "ไร้สายระบบ UHF" }, { en: "300 ft range", th: "ระยะ 90 เมตร" }, { en: "Dual channel", th: "2 ช่องสัญญาณ" }],
+    desc: { en: "Clean wireless handheld for MCs and ceremonies.", th: "ไมค์ลอยเสียงใสสำหรับพิธีกรและงานพิธี" }
+  },
+  {
+    name: "LED Par Package", category: "Lighting", price: "฿2,200 / day",
+    image: "images/gear/led-par.jpg",
+    specs: [{ en: "8× RGBW pars", th: "พาร์ RGBW 8 ดวง" }, { en: "DMX controller", th: "คอนโทรลเลอร์ DMX" }, { en: "Stands included", th: "พร้อมขาตั้ง" }],
+    desc: { en: "Full-colour wash lighting with optional operator.", th: "ไฟวอชครบสี พร้อมช่างคุมไฟ (ถ้าต้องการ)" }
+  },
+  {
+    name: "Moving Head Beam 230W", category: "Lighting", price: "฿900 / unit / day",
+    image: "images/gear/moving-head.jpg",
+    specs: [{ en: "16 gobos", th: "16 โกโบ" }, { en: "Fast pan/tilt", th: "แพน/ทิลต์รวดเร็ว" }, { en: "DMX-512", th: "DMX-512" }],
+    desc: { en: "Sharp beam effects for stage and dancefloor.", th: "ลำแสงคมชัดสำหรับเวทีและฟลอร์เต้น" }
+  },
+  {
+    name: { en: "Stage Truss & Rigging", th: "ทรัสและระบบแขวน" }, category: "Accessories",
+    price: { en: "Quote on request", th: "สอบถามราคา" },
+    image: "images/gear/truss.jpg",
+    specs: [{ en: "Aluminium truss", th: "ทรัสอะลูมิเนียม" }, { en: "Certified rigging", th: "ระบบแขวนได้มาตรฐาน" }, { en: "Crew included", th: "รวมทีมติดตั้ง" }],
+    desc: { en: "Safe certified structures for arrays and lighting.", th: "โครงสร้างปลอดภัยมาตรฐานสำหรับลำโพงและไฟ" }
+  },
+  {
+    name: "Yamaha DXR15 Powered Speaker", category: "Speakers", price: "฿900 / day",
+    image: "images/gear/dxr15.jpg",
+    specs: [{ en: "15\" 2-way powered", th: "แอคทีฟ 2 ทาง 15 นิ้ว" }, { en: "1100W peak", th: "1100 วัตต์พีค" }, { en: "Lightweight", th: "น้ำหนักเบา" }],
+    desc: { en: "Versatile speaker for smaller stages or as a monitor.", th: "ลำโพงอเนกประสงค์สำหรับเวทีขนาดเล็กหรือใช้เป็นมอนิเตอร์" }
+  },
+  {
+    name: "Yamaha MG16XU Mixer", category: "Mixers", price: "฿700 / day",
+    image: "images/gear/mg16xu.jpg",
+    specs: [{ en: "16 channels", th: "16 ช่อง" }, { en: "Built-in effects", th: "เอฟเฟกต์ในตัว" }, { en: "USB audio interface", th: "อินเทอร์เฟซ USB" }],
+    desc: { en: "Simple analogue mixer, great for small to mid-size events.", th: "มิกเซอร์อนาล็อกใช้งานง่าย เหมาะกับงานขนาดเล็กถึงกลาง" }
+  },
+  {
+    name: "Shure SM58 (Wireless Handheld)", category: "Microphones", price: "฿500 / day",
+    image: "images/gear/sm58-wireless.jpg",
+    specs: [{ en: "UHF wireless", th: "ไร้สายระบบ UHF" }, { en: "Rechargeable pack", th: "แบตชาร์จได้" }, { en: "Single channel", th: "1 ช่องสัญญาณ" }],
+    desc: { en: "Familiar SM58 tone without the cable.", th: "เสียง SM58 ที่คุ้นเคยแบบไร้สาย" }
+  },
+  {
+    name: "Lapel (Lavalier) Mic", category: "Microphones", price: "฿400 / day",
+    image: "images/gear/lapel.jpg",
+    specs: [{ en: "Clip-on", th: "หนีบปกเสื้อ" }, { en: "UHF wireless", th: "ไร้สายระบบ UHF" }, { en: "Discreet", th: "ขนาดเล็กไม่เกะกะ" }],
+    desc: { en: "Hands-free mic for MCs, officiants and presenters.", th: "ไมค์ระบบไร้มือจับ เหมาะสำหรับพิธีกรและผู้บรรยาย" }
+  },
+  {
+    name: "Hazer / Fog Machine", category: "Lighting", price: "฿800 / day",
+    image: "images/gear/hazer.jpg",
+    specs: [{ en: "Water-based fluid", th: "น้ำยาสูตรน้ำ" }, { en: "DMX controllable", th: "ควบคุมผ่าน DMX" }, { en: "Adjustable output", th: "ปรับปริมาณควันได้" }],
+    desc: { en: "Makes moving-head beams and lasers pop.", th: "ช่วยให้แสงมูฟวิ่งเฮดและเลเซอร์เห็นชัดขึ้น" }
+  },
+  {
+    name: "Uplighting Set (8×)", category: "Lighting", price: "฿1,600 / day",
+    image: "images/gear/uplights.jpg",
+    specs: [{ en: "8× battery LED uplights", th: "ไฟอัพไลท์แบตเตอรี่ 8 ดวง" }, { en: "Wireless DMX", th: "DMX ไร้สาย" }, { en: "Colour-changing", th: "เปลี่ยนสีได้" }],
+    desc: { en: "Wash walls and stages in colour — great for weddings.", th: "ให้แสงสีสวยงามตามผนังหรือเวที เหมาะกับงานแต่ง" }
+  },
+  {
+    name: { en: "Cable & Power Distro Kit", th: "ชุดสายสัญญาณและจ่ายไฟ" }, category: "Accessories",
+    price: { en: "฿500 / day", th: "฿500 / วัน" },
+    image: "images/gear/cable-kit.jpg",
+    specs: [{ en: "XLR & speaker cable", th: "สาย XLR และสายลำโพง" }, { en: "Power distro box", th: "กล่องจ่ายไฟ" }, { en: "Cable ramps", th: "แผ่นครอบสายกันสะดุด" }],
+    desc: { en: "Everything to safely wire up a stage or booth.", th: "อุปกรณ์ครบชุดสำหรับเดินสายอย่างปลอดภัย" }
+  },
+  {
+    name: { en: "Speaker Stand (Pair)", th: "ขาตั้งลำโพง (คู่)" }, category: "Accessories",
+    price: { en: "฿150 / day", th: "฿150 / วัน" },
+    image: "images/gear/stands.jpg",
+    specs: [{ en: "Height adjustable", th: "ปรับความสูงได้" }, { en: "Steel base", th: "ฐานเหล็ก" }, { en: "Holds up to 50kg", th: "รับน้ำหนักได้ถึง 50 กก." }],
+    desc: { en: "Sturdy stands for any powered speaker.", th: "ขาตั้งที่มั่นคงสำหรับลำโพงแอคทีฟ" }
+  }
+];

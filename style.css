@@ -238,3 +238,33 @@ border-radius:12px;padding:8px;object-fit:contain}
 .qr-card .ph{font-size:.7rem;color:#555;opacity:1}
 .qr-card p{color:var(--mut);font-size:.85rem}
 @media(max-width:600px){.qr-grid{grid-template-columns:1fr}}
+
+/* ---- inventory spec popup ---- */
+#inventoryShowcaseGrid .card{cursor:pointer}
+.spec-link{display:inline-block;margin-top:8px;font-size:.76rem;font-weight:700;color:var(--acc)}
+.spec-modal{position:fixed;inset:0;z-index:90;display:none;place-items:center;padding:20px;
+background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}
+.spec-modal.open{display:grid;animation:specFade .2s ease}
+.spec-box{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(860px,100%);
+max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--line);
+border-radius:var(--r);box-shadow:0 30px 80px var(--shadow);animation:specPop .25s ease}
+.spec-img{background:var(--bg2);min-height:280px;cursor:zoom-in}
+.spec-img img{width:100%;height:100%;object-fit:cover}
+.spec-info{padding:32px 28px;display:flex;flex-direction:column;gap:6px}
+.spec-info h3{font-size:1.5rem;font-weight:800;letter-spacing:-.4px;line-height:1.2}
+.spec-info h4{margin:18px 0 6px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--acc)}
+.spec-list{list-style:none;margin-bottom:20px}
+.spec-list li{position:relative;padding:10px 0 10px 26px;border-bottom:1px solid var(--line);font-size:.92rem}
+.spec-list li::before{content:"✓";position:absolute;left:0;color:var(--acc);font-weight:800}
+.spec-info .btn{margin-top:auto}
+.spec-close{position:absolute;top:10px;right:14px;z-index:2;width:36px;height:36px;border-radius:50%;
+border:0;background:color-mix(in srgb,var(--bg) 80%,transparent);color:var(--txt);
+font-size:1.6rem;line-height:1;cursor:pointer}
+.spec-close:hover{color:var(--acc)}
+@keyframes specFade{from{opacity:0}to{opacity:1}}
+@keyframes specPop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:700px){
+  .spec-box{grid-template-columns:1fr}
+  .spec-img{min-height:0;aspect-ratio:16/10}
+  .spec-info{padding:22px 20px}
+}

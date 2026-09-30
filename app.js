@@ -120,7 +120,7 @@ function renderInventoryShowcase() {
   const list = CAT2 === "All" ? INVENTORY : INVENTORY.filter(i => i.category === CAT2);
   const shown = SHOW_ALL ? list : list.slice(0, INV_LIMIT);
   set("#inventoryShowcaseGrid", "innerHTML", shown.map(i => `
-    <article class="card">
+    <article class="card" data-inv="${INVENTORY.indexOf(i)}">
       <div class="thumb" data-full="${i.image}" data-cap="${t(i.name)}">
         ${img(i.image, t(i.name))}
         <span class="tag">${t(UI.categories[i.category]) || i.category}</span>
@@ -128,6 +128,7 @@ function renderInventoryShowcase() {
       <div class="body">
         <h3>${t(i.name)}</h3>
         <p class="desc">${t(i.desc)}</p>
+        <span class="spec-link">${t({ en: "View specs →", th: "ดูสเปก →" })}</span>
       </div>
     </article>`).join(""));
 
@@ -135,6 +136,25 @@ function renderInventoryShowcase() {
     `<button class="btn ghost sm" id="invMoreBtn">${SHOW_ALL
       ? t({ en: "Show less", th: "ย่อลง" })
       : t({ en: `Show all (${list.length})`, th: `ดูทั้งหมด (${list.length})` })}</button>`);
+}
+
+/* ---------- spec popup ---------- */
+function openSpec(idx) {
+  const i = INVENTORY[idx];
+  if (!i) return;
+  set("#specImg",   "innerHTML", `<div data-full="${i.image}" data-cap="${t(i.name)}" style="width:100%;height:100%">${img(i.image, t(i.name))}</div>`);
+  set("#specCat",   "textContent", t(UI.categories[i.category]) || i.category);
+  set("#specTitle", "textContent", t(i.name));
+  set("#specDesc",  "textContent", t(i.desc));
+  set("#specHead",  "textContent", t({ en: "Specifications", th: "สเปกสินค้า" }));
+  set("#specList",  "innerHTML", (i.specs || []).map(s => `<li>${t(s)}</li>`).join(""));
+  set("#specCta",   "textContent", t({ en: "Request a quote", th: "ขอใบเสนอราคา" }));
+  $("#specModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeSpec() {
+  $("#specModal")?.classList.remove("open");
+  document.body.style.overflow = "";
 }
 
 /* ---------- events ---------- */
@@ -148,6 +168,11 @@ document.addEventListener("click", e => {
   }
 
   if (e.target.closest("#invMoreBtn")) { SHOW_ALL = !SHOW_ALL; renderInventoryShowcase(); }
+
+  if (e.target.closest("#specClose, #specCta") || e.target === $("#specModal")) closeSpec();
+
+  const invCard = e.target.closest("#inventoryShowcaseGrid .card");
+  if (invCard && !e.target.closest(".thumb")) openSpec(+invCard.dataset.inv);
 
   const full = e.target.closest("[data-full]");
   if (full) {
@@ -165,7 +190,10 @@ document.addEventListener("click", e => {
 });
 
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape") $("#lightbox")?.classList.remove("open");
+  if (e.key === "Escape") {
+    if ($("#lightbox")?.classList.contains("open")) $("#lightbox").classList.remove("open");
+    else closeSpec();
+  }
 });
 addEventListener("scroll", () => $("#nav")?.classList.toggle("solid", scrollY > 40));
 
