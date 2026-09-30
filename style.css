@@ -227,3 +227,14 @@ box-shadow:0 8px 26px var(--shadow);transition:.22s}
   #inventoryShowcaseGrid{grid-template-columns:repeat(2,1fr);gap:10px}
   #inventoryShowcaseGrid .body{padding:10px}
 }
+
+/* ---- QR contact cards ---- */
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.qr-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+padding:24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.qr-card h3{font-size:1.15rem;font-weight:800}
+.qr-card img,.qr-card .ph{width:100%;max-width:200px;aspect-ratio:1;background:#fff;
+border-radius:12px;padding:8px;object-fit:contain}
+.qr-card .ph{font-size:.7rem;color:#555;opacity:1}
+.qr-card p{color:var(--mut);font-size:.85rem}
+@media(max-width:600px){.qr-grid{grid-template-columns:1fr}}

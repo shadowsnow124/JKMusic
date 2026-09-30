@@ -18,26 +18,25 @@ const HERO_SLIDES = [
 const SLIDE_SECONDS = 5; // how long each slide stays up before crossfading
 
 const BUSINESS = {
-  name: "",
+  name: "JKMusic",
   logo: "images/logo.png",              // leave as-is; falls back to a mark if missing
   tagline:  { en: "Complete Sound System Packages", th: "บริการเช่าเครื่องเสียงครบชุด" },
   subtitle: { en: "Turnkey audio, lighting & crew — one price, zero stress",
-              th: "คาราโอเกะ โฟล์คซอง งานอีเวนต์ งานแสดงสด" },
+              th: "บริการให้เช่าเครื่องเสียงระดับมืออาชีพประสบการณ์กว่า 30 ปี หากคุณกำลังมองหาทีมเครื่องเสียงที่ 'ไว้ใจได้' เราพร้อมดูแลคุณ" },
   phone: "+66 89 925 1914",
   line: "@jkmusic",
   email: "jakkrit.kan2510@gmail.com",
-  address: { en: "Your address here", th: "ที่อยู่ของคุณ" },
   hours:   { en: "Mon–Sun, 9:00 – 20:00", th: "จันทร์–อาทิตย์ 9:00 – 20:00 น." },
-  facebook: "https://facebook.com/jkmusic",
-  instagram: "https://instagram.com/jkmusic",
+  facebook: "https://www.facebook.com/profile.php?id=61588769314954",
+  instagram: "https://www.instagram.com/jk.music.karaoke/?utm_source=ig_web_button_share_sheet",
+  youtube: "https://www.youtube.com/@JK-music-karaoke",
   fastwork: "https://fastwork.co/byob/eZmj4SQhIu?openExternalBrowser=1&source=byob",   // ← your Fastwork profile URL
   fastworkIcon: {                                        // one icon file per theme, both optional
     dark:  "images/fastwork-dark.png",                   // shown when the site is in dark mode
     light: "images/fastwork-light.png"                   // shown when the site is in light mode
   },
-  yearsExperience: { en: "10 Year", th: "10 ปี" },
+  yearsExperience: { en: "30 Year", th: "30 ปี" },
   eventsDone:      { en: "200 Events", th: "200 งาน" },
-  formEndpoint: "https://formsubmit.co/jakkrit.kan2510@gmail.com"
 };
 
 /* ---------------- PACKAGES (MAIN SERVICE) ----------------
@@ -445,12 +444,6 @@ const UI = {
     sub:   { en: "A look at the professional-grade gear we own and maintain — everything you see here can be part of your event.",
              th: "อุปกรณ์ระดับมืออาชีพที่เราดูแลรักษาอย่างดี พร้อมนำไปใช้ในงานของคุณ" }
   },
-  rental: {
-    title: { en: "Individual Equipment Rental", th: "เช่าอุปกรณ์รายชิ้น" },
-    sub:   { en: "Already have a setup? Rent single items to fill the gaps, or add extras to any package.",
-             th: "มีระบบอยู่แล้ว? เช่าเฉพาะชิ้นที่ขาด หรือเพิ่มอุปกรณ์เสริมเข้าไปในแพ็กเกจได้" },
-    enquire: { en: "Enquire", th: "สอบถาม" }
-  },
   categories: {
     All:         { en: "All", th: "ทั้งหมด" },
     Speakers:    { en: "Speakers", th: "ลำโพง" },
@@ -487,25 +480,6 @@ const UI = {
         t: { en: "— you enjoy it.", th: "— คุณสนุกกับงานได้เต็มที่" } }
     ]
   },
-  contact: {
-    title: { en: "Get In Touch", th: "ติดต่อเรา" },
-    sub:   { en: "Tell us your date and venue and we'll send a quote within 24 hours.",
-             th: "แจ้งวันที่และสถานที่จัดงาน เราจะส่งใบเสนอราคาให้ภายใน 24 ชั่วโมง" },
-    name:    { en: "Name", th: "ชื่อ" },
-    namePh:  { en: "Your name", th: "ชื่อของคุณ" },
-    phone:   { en: "Phone", th: "เบอร์โทร" },
-    email:   { en: "Email", th: "อีเมล" },
-    date:    { en: "Event Date", th: "วันที่จัดงาน" },
-    pkg:     { en: "Package Interested In", th: "แพ็กเกจที่สนใจ" },
-    venue:   { en: "Venue / Guest Count", th: "สถานที่ / จำนวนแขก" },
-    venuePh: { en: "e.g. Hotel ballroom, 300 guests", th: "เช่น ห้องบอลรูมโรงแรม, แขก 300 คน" },
-    details: { en: "Details", th: "รายละเอียดเพิ่มเติม" },
-    detailsPh: { en: "Tell us about your event...", th: "เล่ารายละเอียดงานของคุณ..." },
-    send:    { en: "Send Enquiry", th: "ส่งข้อความ" },
-    note:    { en: "Or message us on WhatsApp / LINE for a faster reply.",
-               th: "หรือทักเราทาง Fastwork / LINE เพื่อรับคำตอบเร็วขึ้น" },
-    optIndividual: { en: "Individual equipment only", th: "เช่าอุปกรณ์รายชิ้นเท่านั้น" },
-    optUnsure:     { en: "Not sure yet", th: "ยังไม่แน่ใจ" }
-  },
+
   footer: { rights: { en: "All rights reserved.", th: "สงวนลิขสิทธิ์" } }
 };

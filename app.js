@@ -7,7 +7,7 @@ let LANG  = localStorage.getItem("jk_lang")  || "en";
 let THEME = localStorage.getItem("jk_theme") || "dark";
 let CAT2  = "All";
 let SHOW_ALL = false;
-const INV_LIMIT = 8;   // items shown before "Show all"
+const INV_LIMIT = 12;   // divisible by 2, 3 and 4 columns
 
 const t  = v => (v && typeof v === "object" && !Array.isArray(v)) ? (v[LANG] ?? v.en) : v;
 const ui = p => t(p.split(".").reduce((o, k) => o?.[k], UI)) ?? "";
@@ -47,13 +47,8 @@ function render() {
   set("#footName2", "textContent", BUSINESS.name);
   set("#footAddr",  "textContent", t(BUSINESS.address));
   set("#year",      "textContent", new Date().getFullYear());
-  set("#quoteForm", "action",      BUSINESS.formEndpoint);
   set("#fwFloat", "href", BUSINESS.fastwork);
   document.title = `${BUSINESS.name} — ${t(BUSINESS.tagline)}`;
-
-  set("#fName",  "placeholder", t(UI.contact.namePh));
-  set("#fVenue", "placeholder", t(UI.contact.venuePh));
-  set("#fMsg",   "placeholder", t(UI.contact.detailsPh));
 
   set("#stats", "innerHTML", [
     [t(BUSINESS.yearsExperience) + "+", t(UI.stats.years)],
@@ -65,18 +60,31 @@ function render() {
     <li>📞 <a href="tel:${BUSINESS.phone.replace(/\s/g, "")}">${BUSINESS.phone}</a></li>
     <li>✉️ <a href="mailto:${BUSINESS.email}">${BUSINESS.email}</a></li>
     <li>💬 LINE: ${BUSINESS.line}</li>
-    <li>📍 ${t(BUSINESS.address)}</li>
     <li>🕘 ${t(BUSINESS.hours)}</li>`);
 
   set("#socials", "innerHTML", `
-    <a class="btn ghost sm" target="_blank" rel="noopener" href="https://wa.me/${BUSINESS.whatsapp}">WhatsApp</a>
     <a class="btn ghost sm" target="_blank" rel="noopener" href="${BUSINESS.facebook}">Facebook</a>
-    <a class="btn ghost sm" target="_blank" rel="noopener" href="${BUSINESS.instagram}">Instagram</a>`);
+    <a class="btn ghost sm" target="_blank" rel="noopener" href="${BUSINESS.instagram}">Instagram</a>
+    <a class="btn ghost sm" target="_blank" rel="noopener" href="${BUSINESS.youtube}">Youtube</a>`);
+
+  const lineId  = String(BUSINESS.line);
+  const lineUrl = "https://line.me/R/ti/p/" + (lineId.startsWith("@") ? lineId : "~" + lineId.replace(/^~/, ""));
+
+  set("#qrBox", "innerHTML", [
+    ["LINE",     "images/qr-line.png",     lineUrl,           t({ en: "Scan to add us on LINE", th: "สแกนเพื่อเพิ่มเพื่อน LINE" }),          t({ en: "Open LINE", th: "เปิด LINE" })],
+    ["Fastwork", "images/qr-fastwork.png", BUSINESS.fastwork, t({ en: "Scan to hire us on Fastwork", th: "สแกนเพื่อจ้างงานผ่าน Fastwork" }), t({ en: "Open Fastwork", th: "เปิด Fastwork" })]
+  ].map(([name, src, url, cap, btn]) => `
+    <div class="qr-card">
+      <h3>${name}</h3>
+      <img src="${src}" alt="${name} QR code"
+        onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',textContent:'${src}'}))">
+      <p>${cap}</p>
+      <a class="btn ghost sm" target="_blank" rel="noopener" href="${url}">${btn}</a>
+    </div>`).join(""));
 
   set("#packageGrid", "innerHTML", PACKAGES.map(p => `
     <article class="pkg${p.featured ? " featured" : ""}">
       ${p.featured ? `<span class="badge">${t(UI.packages.badge)}</span>` : ""}
-      <div class="pkg-thumb" data-full="${p.image}" data-cap="${t(p.name)}">${img(p.image, t(p.name))}</div>
       <div class="pkg-body">
         <h3>${t(p.name)}</h3>
         <p class="pkg-for">${t(p.forWho)}</p>
@@ -86,10 +94,6 @@ function render() {
         <a href="#contact" class="btn ${p.featured ? "" : "ghost "}full" data-pkg="${t(p.name)}">${t(UI.packages.cta)}</a>
       </div>
     </article>`).join(""));
-
-  set("#pkgSelect", "innerHTML",
-    PACKAGES.map(p => `<option>${t(p.name)}</option>`).join("") +
-    `<option>${t(UI.contact.optIndividual)}</option><option>${t(UI.contact.optUnsure)}</option>`);
 
   const invCats = ["All", ...new Set(INVENTORY.map(i => i.category))];
   set("#invFilters", "innerHTML", invCats.map(c =>
@@ -144,9 +148,6 @@ document.addEventListener("click", e => {
   }
 
   if (e.target.closest("#invMoreBtn")) { SHOW_ALL = !SHOW_ALL; renderInventoryShowcase(); }
-
-  const pkg = e.target.closest("[data-pkg]");
-  if (pkg) set("#pkgSelect", "value", pkg.dataset.pkg);
 
   const full = e.target.closest("[data-full]");
   if (full) {
