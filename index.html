@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JK.Music — Sound System Rental</title>
+  <meta name="description" content="JK.music — complete sound system, lighting and crew packages for weddings, concerts and corporate events.">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <img id="logoImg" alt="" onerror="this.remove();document.getElementById('logoMark').style.display='block'">
+      <span id="logoMark" class="dot" style="display:none"></span>
+      <span id="logoName"></span>
+    </a>
+
+    <nav id="menu">
+      <a href="#packages"  data-nav="packages"></a>
+      <a href="#inventory" data-nav="inventory"></a>
+      <a href="#portfolio" data-nav="portfolio"></a>
+      <a href="#about"     data-nav="about"></a>
+      <a href="#contact" class="btn-sm" data-nav="quote"></a>
+    </nav>
+
+    <div class="toggles">
+      <button id="langBtn" class="tgl" aria-label="Switch language"><span id="langTxt">TH</span></button>
+      <button id="themeBtn" class="tgl" aria-label="Switch theme"><span id="themeTxt">☀</span></button>
+      <button id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow" id="heroSub"></p>
+      <h1 id="heroTitle"></h1>
+      <p class="lead" id="heroTag"></p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn" id="heroCta1"></a>
+        <a href="#packages" class="btn ghost" id="heroCta2"></a>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+
+    <div class="hero-media">
+      <div class="slides" id="slides"></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" class="section">
+  <div class="container">
+    <h2 class="title" data-ui="packages.title"></h2>
+    <p class="sub" data-ui="packages.sub"></p>
+    <div class="pkg-grid" id="packageGrid"></div>
+    <p class="pkg-foot" data-ui="packages.foot"></p>
+  </div>
+</section>
+
+<section id="inventory" class="section alt">
+  <div class="container">
+    <h2 class="title" data-ui="inventory.title"></h2>
+    <p class="sub" data-ui="inventory.sub"></p>
+    <div class="filters" id="invFilters"></div>
+    <div class="grid" id="inventoryShowcaseGrid"></div>
+    <div class="more" id="invMore"></div>
+  </div>
+</section>
+
+<section id="portfolio" class="section alt">
+  <div class="container">
+    <h2 class="title" data-ui="portfolio.title"></h2>
+    <p class="sub" data-ui="portfolio.sub"></p>
+    <div class="grid" id="portfolioGrid"></div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container about">
+    <div>
+      <h2 class="title left" data-ui="about.title"></h2>
+      <ul class="checks" id="aboutPoints"></ul>
+    </div>
+    <div class="about-card">
+      <h3 data-ui="about.howTitle"></h3>
+      <ol class="steps" id="aboutSteps"></ol>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="container contact">
+    <div>
+      <h2 class="title left" data-ui="contact.title"></h2>
+      <p class="sub left" data-ui="contact.sub"></p>
+      <ul class="info" id="contactInfo"></ul>
+      <div class="socials" id="socials"></div>
+    </div>
+
+    <form id="quoteForm" class="form" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry from JK.music website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="row">
+        <label><span data-ui="contact.name"></span><input name="name" id="fName" required></label>
+        <label><span data-ui="contact.phone"></span><input name="phone" required placeholder="08X-XXX-XXXX"></label>
+      </div>
+      <label><span data-ui="contact.email"></span><input type="email" name="email" placeholder="you@email.com"></label>
+      <div class="row">
+        <label><span data-ui="contact.date"></span><input type="date" name="date"></label>
+        <label><span data-ui="contact.pkg"></span><select name="package" id="pkgSelect"></select></label>
+      </div>
+      <label><span data-ui="contact.venue"></span><input name="venue" id="fVenue"></label>
+      <label><span data-ui="contact.details"></span><textarea name="message" id="fMsg" rows="4"></textarea></label>
+      <button class="btn full" type="submit" data-ui="contact.send"></button>
+      <p class="note" data-ui="contact.note"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <p id="footName"></p>
+    <p id="footAddr"></p>
+    <p class="tiny">© <span id="year"></span> <span id="footName2"></span>. <span data-ui="footer.rights"></span></p>
+  </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</div>
+
+<a id="fwFloat" class="fw-float" target="_blank" rel="noopener" aria-label="Hire us on Fastwork">
+  <img id="fwIcon" alt="Fastwork" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fw-txt',textContent:'FW'}))">
+</a>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
