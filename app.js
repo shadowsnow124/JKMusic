@@ -101,14 +101,15 @@ function render() {
 
   renderInventoryShowcase();
 
-  set("#portfolioGrid", "innerHTML", PORTFOLIO.map(p => `
-    <article class="card work" data-full="${p.image}" data-cap="${t(p.title)} — ${t(p.location)} ${p.year}">
+  set("#portfolioGrid", "innerHTML", PORTFOLIO.map((p, idx) => `
+    <article class="card work" data-evt="${idx}">
       <div class="thumb">${img(p.image, t(p.title))}</div>
       <div class="body">
         <span class="tag flat">${t(p.event)}</span>
         <h3>${t(p.title)}</h3>
         <p class="meta">${t(p.location)} · ${p.year}</p>
         <div class="tags">${p.tags.map(x => `<span>${t(x)}</span>`).join("")}</div>
+        <span class="spec-link">${t({ en: "View details →", th: "ดูลายละเอียด →" })}</span>
       </div>
     </article>`).join(""));
 
@@ -157,6 +158,53 @@ function closeSpec() {
   document.body.style.overflow = "";
 }
 
+/* ---------- event popup (instagram-style gallery) ---------- */
+function openEvent(idx) {
+  const p = PORTFOLIO[idx];
+  if (!p) return;
+  const pics = [p.image, ...(p.gallery || [])].filter(Boolean);
+
+  set("#evtTrack", "innerHTML", pics.map(src =>
+    `<div class="evt-slide">${img(src, t(p.title))}</div>`).join(""));
+  $("#evtTrack").scrollLeft = 0;
+  set("#evtDots", "innerHTML", pics.map((_, n) => `<i class="${n ? "" : "on"}" data-go="${n}"></i>`).join(""));
+
+  const multi = pics.length > 1;
+  ["#evtPrev", "#evtNext", "#evtDots", "#evtCount"].forEach(s => $(s).hidden = !multi);
+  set("#evtCount", "textContent", `1 / ${pics.length}`);
+
+  set("#evtCat",   "textContent", t(p.event));
+  set("#evtTitle", "textContent", t(p.title));
+  set("#evtMeta",  "textContent", `${t(p.location)} · ${p.year}`);
+  set("#evtTags",  "innerHTML", p.tags.map(x => `<span>${t(x)}</span>`).join(""));
+  set("#evtHead",  "textContent", t({ en: "Setup & system used", th: "ระบบและอุปกรณ์ที่ใช้" }));
+  set("#evtSetup", "innerHTML", (p.setup || []).map(s => `<li>${t(s)}</li>`).join(""));
+  $("#evtHead").style.display = (p.setup || []).length ? "" : "none";
+  set("#evtCta",   "textContent", t({ en: "Request a quote", th: "ขอใบเสนอราคา" }));
+
+  $("#evtModal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeEvent() {
+  $("#evtModal")?.classList.remove("open");
+  document.body.style.overflow = "";
+}
+function evtGo(n) {
+  const tr = $("#evtTrack");
+  const total = tr.children.length;
+  const to = Math.max(0, Math.min(total - 1, n));
+  tr.scrollTo({ left: to * tr.clientWidth, behavior: "smooth" });
+}
+function evtIndex() {
+  const tr = $("#evtTrack");
+  return Math.round(tr.scrollLeft / (tr.clientWidth || 1));
+}
+$("#evtTrack")?.addEventListener("scroll", () => {
+  const n = evtIndex();
+  $$("#evtDots i").forEach((d, k) => d.classList.toggle("on", k === n));
+  set("#evtCount", "textContent", `${n + 1} / ${$("#evtTrack").children.length}`);
+}, { passive: true });
+
 /* ---------- events ---------- */
 document.addEventListener("click", e => {
   const chip = e.target.closest(".chip");
@@ -170,6 +218,15 @@ document.addEventListener("click", e => {
   if (e.target.closest("#invMoreBtn")) { SHOW_ALL = !SHOW_ALL; renderInventoryShowcase(); }
 
   if (e.target.closest("#specClose, #specCta") || e.target === $("#specModal")) closeSpec();
+
+  if (e.target.closest("#evtClose, #evtCta") || e.target === $("#evtModal")) closeEvent();
+  if (e.target.closest("#evtPrev")) evtGo(evtIndex() - 1);
+  if (e.target.closest("#evtNext")) evtGo(evtIndex() + 1);
+  const dot = e.target.closest("#evtDots i");
+  if (dot) evtGo(+dot.dataset.go);
+
+  const evtCard = e.target.closest("#portfolioGrid .card");
+  if (evtCard) openEvent(+evtCard.dataset.evt);
 
   const invCard = e.target.closest("#inventoryShowcaseGrid .card");
   if (invCard && !e.target.closest(".thumb")) openSpec(+invCard.dataset.inv);
@@ -192,7 +249,11 @@ document.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
     if ($("#lightbox")?.classList.contains("open")) $("#lightbox").classList.remove("open");
-    else closeSpec();
+    else { closeSpec(); closeEvent(); }
+  }
+  if ($("#evtModal")?.classList.contains("open")) {
+    if (e.key === "ArrowRight") evtGo(evtIndex() + 1);
+    if (e.key === "ArrowLeft")  evtGo(evtIndex() - 1);
   }
 });
 addEventListener("scroll", () => $("#nav")?.classList.toggle("solid", scrollY > 40));
