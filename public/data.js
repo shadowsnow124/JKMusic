@@ -11,11 +11,11 @@
    many slides show. Landscape photos, ~1600px wide, work best.
 -------------------------------------------------- */
 const HERO_SLIDES = [
-  "images/event/IMG_6276.JPG",
-  "images/event/IMG_6282.JPG",
-  "images/event/IMG_6307.JPG",
-  "images/event/IMG_6310.JPG",
-  "images/event/IMG_6320.JPG",
+  "images/events/IMG_6276.JPG",
+  "images/events/IMG_6282.JPG",
+  "images/events/IMG_6307.JPG",
+  "images/events/IMG_6310.JPG",
+  "images/events/IMG_6320.JPG",
 ];
 const SLIDE_SECONDS = 7; // how long each slide stays up before crossfading
 
@@ -39,9 +39,8 @@ const BUSINESS = {
     "https://www.instagram.com/jk.music.karaoke/?utm_source=ig_web_button_share_sheet",
   youtube: "https://www.youtube.com/@JK-music-karaoke",
   fastwork:
-    "https://fastwork.co/byob/eZmj4SQhIu?openExternalBrowser=1&source=byob", // ← your Fastwork profile URL
+    "https://fastwork.co/byob/eZmj4SQhIu?openExternalBrowser=1&source=byob", 
   fastworkIcon: {
-    // one icon file per theme, both optional
     dark: "images/fastwork-dark.png", // shown when the site is in dark mode
     light: "images/fastwork-light.png", // shown when the site is in light mode
   },
@@ -89,7 +88,6 @@ const PACKAGES = [
     },
     price: "฿5,500",
     priceNote: { en: "per queue", th: "ต่อคิว" },
-    image: "images/packages/event-pro.jpg",
     featured: true,
     includes: [
       { en: "2× full-range speakers", th: "ลำโพง Full-range 2 ใบ" },
@@ -106,14 +104,13 @@ const PACKAGES = [
     },
   },
   {
-    name: { en: "SET 4x4", th: "SET 4x4" },
+    name: { en: "SET 2x4", th: "SET 2x4" },
     forWho: { en: "Live shows · 400–600 guests", th: "งานแสดงสด · 400–600 คน" },
     price: { en: "From ฿7,500", th: "เริ่มต้น ฿7,500" },
     priceNote: { en: "per queue", th: "ต่อคิว" },
-    image: "images/packages/concert.jpg",
     featured: false,
     includes: [
-      { en: "4× full-range speakers", th: "ลำโพง Full-range 4 ใบ" },
+      { en: "2× full-range speakers", th: "ลำโพง Full-range 2 ใบ" },
       { en: '4× 18" subwoofer', th: "ซับวูฟเฟอร์ 18 นิ้ว 4 ใบ" },
       { en: "16-channel mixer", th: "มิกเซอร์ 16 ช่อง" },
       { en: "4× wireless microphones", th: "ไมค์ลอย 4 ตัว" },
@@ -134,7 +131,6 @@ const PACKAGES = [
     },
     price: { en: "Free quote", th: "ประเมินราคาฟรี" },
     priceNote: { en: "tailored to you", th: "ออกแบบเฉพาะงานคุณ" },
-    image: "images/packages/custom.jpg",
     featured: false,
     includes: [
       {
