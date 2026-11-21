@@ -1,168 +1,251 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JK.Music — Sound System Rental</title>
-  <meta name="description" content="JKMusic">
+  <title>JKMusic — Sound System Rental</title>
+  <meta name="description" content="JKMusic — sound system rental with crew, delivery and setup. 30 years of live events in Thailand.">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ============ NAV ============ -->
 <header id="nav">
-  <div class="container nav-inner">
-    <a href="#home" class="logo">
-      <img id="logoImg" alt="" onerror="this.remove();document.getElementById('logoMark').style.display='block'">
-      <span id="logoMark" class="dot" style="display:none"></span>
+  <div class="nav-pill">
+    <a href="#home" class="logo" aria-label="JKMusic home">
+      <img id="logoImg" alt="" onerror="this.remove()">
       <span id="logoName"></span>
     </a>
-
     <nav id="menu">
       <a href="#packages"  data-nav="packages"></a>
       <a href="#inventory" data-nav="inventory"></a>
       <a href="#portfolio" data-nav="portfolio"></a>
-      <a href="#about"     data-nav="about"></a>
-      <a href="#contact" class="btn-sm" data-nav="quote"></a>
+      <a href="#faq"       data-nav="faq"></a>
     </nav>
-
-    <div class="toggles">
-      <button id="langBtn" class="tgl" aria-label="Switch language"><span id="langTxt">TH</span></button>
-      <button id="themeBtn" class="tgl" aria-label="Switch theme"><span id="themeTxt">☀</span></button>
-      <button id="burger" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <button id="langBtn" class="lang" aria-label="Switch language">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span id="langTxt">TH</span>
+      </button>
+      <a href="#contact" class="btn sm" data-nav="quote"></a>
+      <button id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<section id="home" class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <p class="eyebrow" id="heroSub"></p>
-      <h1 id="heroTitle"></h1>
-      <p class="lead" id="heroTag"></p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn" id="heroCta1"></a>
-        <a href="#packages" class="btn ghost" id="heroCta2"></a>
-      </div>
-      <div class="stats" id="stats"></div>
-    </div>
+<main>
 
-    <div class="hero-media">
-      <div class="slides" id="slides"></div>
+<!-- ============ HERO: left headline (Linear) + floating photos + changing word ============ -->
+<section id="home" class="hero">
+  <div class="float-layer" id="floatLayer" aria-hidden="true"></div>
+  <div class="wrap hero-core" id="heroCore">
+    <p class="kicker" id="heroSub"></p>
+    <h1><span id="heroLine1"></span><br><span class="rot" id="heroRot"><span class="rot-word"></span></span></h1>
+    <p class="lead" id="heroTag"></p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn" id="heroCta1"></a>
+      <a href="#packages" class="btn ghost" id="heroCta2"></a>
     </div>
+  </div>
+  <a href="#sheetWin" class="scroll-cue" id="scrollCue">
+    <span data-ui="hero.scroll"></span>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 7l5 5 5-5M7 13l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</section>
+
+<!-- ============ EVENT SHEET: the "product window" ============ -->
+<section class="win-sec" id="sheetWin">
+  <div class="wrap">
+    <div class="win" id="win"></div>
   </div>
 </section>
 
-<section id="packages" class="section">
-  <div class="container">
+<!-- ============ INTRO: photos inside the headline ============ -->
+<section id="intro" class="intro">
+  <div class="wrap center">
+    <h2 class="inline-photo" id="introTitle"></h2>
+    <p class="sub" data-ui="intro.sub"></p>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES: pinned showcase ============ -->
+<section id="packages" class="showcase-sec">
+  <div class="wrap head center">
+    <p class="tag-label" data-nav="packages"></p>
     <h2 class="title" data-ui="packages.title"></h2>
     <p class="sub" data-ui="packages.sub"></p>
-    <div class="pkg-grid" id="packageGrid"></div>
-    <p class="pkg-foot" data-ui="packages.foot"></p>
+  </div>
+  <div class="pin-track" id="pinTrack">
+    <div class="pin-stage">
+      <div class="spot" aria-hidden="true"></div>
+      <div class="wrap pin-grid">
+        <ol class="pin-list" id="pinList"></ol>
+        <div class="pin-card-wrap" id="pinCards"></div>
+      </div>
+    </div>
+  </div>
+  <p class="wrap pkg-foot" data-ui="packages.foot"></p>
+</section>
+
+<!-- ============ DARK: worries as sticky notes, then a white sheet slides over ============ -->
+<section class="dark-sec" id="worries">
+  <div class="wrap center">
+    <h2 class="title light" data-ui="worries.title"></h2>
+    <p class="sub light" data-ui="worries.sub"></p>
+    <div class="notes" id="notes"></div>
+  </div>
+
+  <div class="sheet">
+    <div class="wrap">
+      <h2 class="title center sheet-title"><span data-ui="worries.answer1"></span><br><u data-ui="worries.answer2"></u></h2>
+      <div class="promise" id="aboutPoints"></div>
+    </div>
   </div>
 </section>
 
-<section id="inventory" class="section alt">
-  <div class="container">
-    <h2 class="title" data-ui="inventory.title"></h2>
-    <p class="sub" data-ui="inventory.sub"></p>
-    <div class="filters" id="invFilters"></div>
-    <div class="grid" id="inventoryShowcaseGrid"></div>
+<!-- ============ INVENTORY ============ -->
+<section id="inventory" class="section">
+  <div class="wrap">
+    <div class="head split">
+      <div>
+        <p class="tag-label" data-nav="inventory"></p>
+        <h2 class="title" data-ui="inventory.title"></h2>
+        <p class="sub" data-ui="inventory.sub"></p>
+      </div>
+      <div class="filters" id="invFilters" role="tablist"></div>
+    </div>
+    <div class="inv-grid" id="inventoryShowcaseGrid"></div>
     <div class="more" id="invMore"></div>
   </div>
 </section>
 
-<section id="portfolio" class="section alt">
-  <div class="container">
-    <h2 class="title" data-ui="portfolio.title"></h2>
-    <p class="sub" data-ui="portfolio.sub"></p>
-    <div class="grid" id="portfolioGrid"></div>
+<!-- ============ PORTFOLIO: sideways row ============ -->
+<section id="portfolio" class="section tight">
+  <div class="wrap head split">
+    <div>
+      <p class="tag-label" data-nav="portfolio"></p>
+      <h2 class="title" data-ui="portfolio.title"></h2>
+      <p class="sub" data-ui="portfolio.sub"></p>
+    </div>
+    <div class="row-arrows">
+      <button class="round" id="workPrev" aria-label="Previous events"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="round" id="workNext" aria-label="Next events"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+  <div class="work-row" id="portfolioGrid"></div>
+</section>
+
+<!-- ============ DARK: how booking works ============ -->
+<section id="about" class="dark-sec steps-sec">
+  <div class="wrap">
+    <p class="tag-label center" data-ui="about.howTitle"></p>
+    <h2 class="title light center" data-ui="process.title"></h2>
+    <div class="feat" id="aboutSteps"></div>
   </div>
 </section>
 
-<section id="about" class="section">
-  <div class="container about">
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section">
+  <div class="wrap faq">
     <div>
-      <h2 class="title left" data-ui="about.title"></h2>
-      <ul class="checks" id="aboutPoints"></ul>
+      <p class="tag-label" data-nav="faq"></p>
+      <h2 class="title" data-ui="faq.title"></h2>
+      <p class="sub" data-ui="faq.sub"></p>
+      <a class="btn ghost" id="faqLine" target="_blank" rel="noopener" data-ui="faq.cta"></a>
     </div>
-    <div class="about-card">
-      <h3 data-ui="about.howTitle"></h3>
-      <ol class="steps" id="aboutSteps"></ol>
-    </div>
+    <div class="faq-list" id="faqList"></div>
   </div>
 </section>
 
-<section id="contact" class="section">
-  <div class="container contact">
-    <div>
-      <h2 class="title left" data-ui="contact.title"></h2>
-      <p class="sub left" data-ui="contact.sub"></p>
+<!-- ============ FINAL CTA + CONTACT ============ -->
+<section id="contact" class="final">
+  <div class="final-bg" id="finalBg" aria-hidden="true"></div>
+  <div class="wrap final-core">
+    <h2 class="final-title"><span data-ui="contact.title"></span><br><span class="dim" data-ui="contact.title2"></span></h2>
+    <p class="final-sub" data-ui="contact.sub"></p>
+    <div class="final-btns">
+      <a class="btn white" id="finalLine" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 12a8 8 0 1 1 3.3 6.5L4 20l1.3-3.6A8 8 0 0 1 4 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span data-ui="contact.line"></span>
+      </a>
+      <a class="btn outline-light" id="finalFw" target="_blank" rel="noopener" data-ui="contact.fw"></a>
+    </div>
+
+    <div class="contact-grid">
       <ul class="info" id="contactInfo"></ul>
-      <div class="socials" id="socials"></div>
+      <div class="qr-grid" id="qrBox"></div>
     </div>
-
-    <div class="qr-grid" id="qrBox"></div>
   </div>
+
+  <footer class="wrap foot">
+    <p><b id="footName"></b> <span id="footAddr"></span></p>
+    <div class="socials" id="socials"></div>
+    <p class="tiny">© <span id="year"></span> <span id="footName2"></span>. <span data-ui="footer.rights"></span></p>
+  </footer>
 </section>
 
-<footer>
-  <div class="container foot">
-    <p id="footName"></p>
-    <p id="footAddr"></p>
-    <p class="tiny">© <span id="year"></span> <span id="footName2"></span>. <span data-ui="footer.rights"></span></p>
-  </div>
-</footer>
+</main>
 
-<div id="specModal" class="spec-modal" role="dialog" aria-modal="true" aria-labelledby="specTitle">
-  <div class="spec-box">
-    <button class="spec-close" id="specClose" aria-label="Close">&times;</button>
+<!-- ============ GEAR POPUP ============ -->
+<div id="specModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="specTitle">
+  <div class="modal-box">
+    <button class="m-close" id="specClose" aria-label="Close">&times;</button>
     <div class="spec-img" id="specImg"></div>
-    <div class="spec-info">
-      <span class="tag flat" id="specCat"></span>
+    <div class="m-info">
+      <span class="m-cat" id="specCat"></span>
       <h3 id="specTitle"></h3>
-      <p class="desc" id="specDesc"></p>
+      <p class="m-desc" id="specDesc"></p>
       <h4 id="specHead"></h4>
-      <ul class="spec-list" id="specList"></ul>
+      <ul class="m-list" id="specList"></ul>
       <a href="#contact" class="btn full" id="specCta"></a>
     </div>
   </div>
 </div>
 
-<div id="evtModal" class="evt-modal" role="dialog" aria-modal="true" aria-labelledby="evtTitle">
-  <div class="evt-box">
-    <button class="spec-close" id="evtClose" aria-label="Close">&times;</button>
+<!-- ============ EVENT POPUP ============ -->
+<div id="evtModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="evtTitle">
+  <div class="modal-box wide">
+    <button class="m-close" id="evtClose" aria-label="Close">&times;</button>
     <div class="evt-gallery">
       <div class="evt-track" id="evtTrack"></div>
-      <button class="evt-nav prev" id="evtPrev" aria-label="Previous">&#8249;</button>
-      <button class="evt-nav next" id="evtNext" aria-label="Next">&#8250;</button>
+      <button class="round evt-nav prev" id="evtPrev" aria-label="Previous"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="round evt-nav next" id="evtNext" aria-label="Next"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <span class="evt-count" id="evtCount"></span>
       <div class="evt-dots" id="evtDots"></div>
     </div>
-    <div class="evt-info">
-      <span class="tag flat" id="evtCat"></span>
+    <div class="m-info">
+      <span class="m-cat" id="evtCat"></span>
       <h3 id="evtTitle"></h3>
-      <p class="meta" id="evtMeta"></p>
+      <p class="m-desc" id="evtMeta"></p>
       <div class="tags" id="evtTags"></div>
       <h4 id="evtHead"></h4>
-      <ul class="spec-list" id="evtSetup"></ul>
+      <ul class="m-list" id="evtSetup"></ul>
       <a href="#contact" class="btn full" id="evtCta"></a>
     </div>
   </div>
 </div>
 
 <div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
+  <button class="m-close" aria-label="Close">&times;</button>
   <img id="lbImg" alt="">
   <p id="lbCap"></p>
 </div>
 
-<a id="fwFloat" class="fw-float" target="_blank" rel="noopener" aria-label="Hire us on Fastwork">
-  <img id="fwIcon" alt="Fastwork" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fw-txt',textContent:'FW'}))">
-</a>
+<!-- ============ FLOATING FASTWORK BADGE ============ -->
+<aside class="fw-float" id="fwFloat">
+  <img src="images/logo.png" alt="" class="fw-avatar">
+  <div class="fw-txt">
+    <p><span data-ui="fastwork.avail"></span> <img id="fwIcon" alt="" class="fw-mark"><b>fastwork</b></p>
+  </div>
+  <a class="btn sm" id="fwFloatBtn" target="_blank" rel="noopener" data-ui="fastwork.cta"></a>
+  <button class="fw-x" id="fwClose" aria-label="Hide">&times;</button>
+</aside>
 
 <script src="data.js"></script>
 <script src="app.js"></script>
