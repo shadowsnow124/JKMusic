@@ -13,7 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: N
+      - name: Create firebase-config.js from the FIREBASE_WEB_CONFIG secret
+        env:
+          FIREBASE_WEB_CONFIG: ${{ secrets.FIREBASE_WEB_CONFIG }}
+        run: |
+          if [ -n "$FIREBASE_WEB_CONFIG" ]; then
+            printf '%s\n' "$FIREBASE_WEB_CONFIG" > public/firebase-config.js
+          else
+            echo "::warning::FIREBASE_WEB_CONFIG secret is missing, so the CMS admin page won't sign in. The website itself still works."
+            cp public/firebase-config.example.js public/firebase-config.js
+          fi
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
